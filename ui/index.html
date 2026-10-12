@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FloodGuardAI · Alappuzha</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section id="login">
+  <div class="login-art"><div class="wave"></div><h1>FloodGuard<span>AI</span></h1><p>Early flood warnings for Alappuzha, delivered to your phone before the water reaches your door.</p></div>
+  <form id="loginForm" onsubmit="return false">
+    <h2>Sign in</h2>
+    <label>Username<input id="username" autocomplete="off"></label>
+    <label>Password<input id="password" type="password" autocomplete="new-password"></label>
+    <button id="loginBtn">Sign in</button>
+    <p id="loginErr" class="err"></p>
+    
+  </form>
+</section>
+
+<main id="app" hidden>
+  <header>
+    <h1>FloodGuard<span>AI</span></h1>
+    <div class="head-r"><span id="alertPhone"></span><button class="ghost" id="demoBtn">Simulate flood</button><button class="ghost" id="logout">Sign out</button></div>
+  </header>
+
+  <div id="banner" class="banner" hidden></div>
+
+  <section class="hero">
+    <div class="tank" id="tank"><div class="fill" id="fill"></div><div class="tank-label"><b id="score">–</b><span>of 100</span></div></div>
+    <div class="hero-txt">
+      <p class="place">Alappuzha, Kerala · <select id="area" aria-label="Choose area"></select></p>
+      <h2 id="levelTxt">Checking conditions…</h2>
+      <p id="levelMsg"></p>
+      <div class="facts" id="facts"></div>
+      <p class="upd" id="upd"></p>
+    </div>
+  </section>
+
+  <section class="grid">
+    <div class="panel"><h3>Live weather</h3><div id="weather" class="wx"></div><div id="obs" class="note obs"></div></div>
+    <div class="panel"><h3>3-day forecast</h3><div id="forecast" class="fc"></div></div>
+    <div class="panel"><h3>Rainfall: past 3 days and forecast</h3><canvas id="rainChart" height="110"></canvas></div>
+    <div class="panel"><h3>Stored risk history</h3><canvas id="histChart" height="110"></canvas><p class="note" id="histNote"></p></div>
+  </section>
+
+  <section class="pair">
+    <div class="panel"><h3>Why this score?</h3><p id="exSummary"></p><div id="exBars" class="bars"></div><p class="note" id="exFlip"></p></div>
+    <div class="panel"><h3>What if…?</h3>
+      <label class="sl">Forecast rain, next 24h <b id="v1"></b><input type="range" id="s1" min="0" max="250"></label>
+      <label class="sl">Rain, last 24h <b id="v2"></b><input type="range" id="s2" min="0" max="250"></label>
+      <label class="sl">River flow vs normal <b id="v3"></b><input type="range" id="s3" min="1" max="4" step="0.1"></label>
+      <p id="wiOut" class="wi"></p><div id="wiBars" class="bars"></div></div>
+  </section>
+
+  <section class="panel"><h3>Local preset data</h3><div id="preset" class="preset"></div></section>
+
+  <section class="panel"><h3>Evacuation routes</h3>
+    <div id="map"></div><div id="routeList" class="routes"></div>
+    <p class="note">Routes and shelters are indicative. Confirm active relief camps with the Alappuzha district control room (1077).</p>
+  </section>
+
+  <section class="grid2">
+    <div class="panel"><h3>Emergency numbers</h3><div id="numbers" class="nums"></div></div>
+    <div class="panel"><h3>First aid</h3><div id="firstaid" class="acc"></div></div>
+    <div class="panel"><h3>Precautions</h3><div id="precautions" class="acc"></div></div>
+  </section>
+</main>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

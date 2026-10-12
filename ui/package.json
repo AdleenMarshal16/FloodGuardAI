@@ -1,0 +1,6 @@
+{
+  "name": "flood-ui",
+  "version": "1.0.0",
+  "scripts": { "start": "http-server . -p 5173 -c-1 -o" },
+  "devDependencies": { "http-server": "^14.1.1" }
+}

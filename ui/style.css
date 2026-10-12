@@ -1,0 +1,55 @@
+:root{--ink:#0b2a2e;--deep:#0f3d42;--mist:#e6efed;--card:#fff;--line:#cfdcd9;--txt:#16302f;--mut:#5d7471;--lvl:#2e9e6b}
+*{box-sizing:border-box}body{margin:0;background:var(--mist);color:var(--txt);font:400 16px/1.55 'IBM Plex Sans',sans-serif}
+h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;margin:0}h1 span{color:#5fd0c4}
+[hidden]{display:none!important}
+button{font:500 15px 'IBM Plex Sans';border:0;border-radius:10px;padding:11px 18px;background:var(--ink);color:#fff;cursor:pointer}
+button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #5fd0c4;outline-offset:2px}
+button.ghost{background:transparent;color:#fff;border:1px solid #ffffff55;padding:8px 14px}
+#login{min-height:100vh;display:grid;grid-template-columns:1.2fr 1fr}
+.login-art{background:var(--ink);color:#fff;padding:12vh 8vw;position:relative;overflow:hidden}
+.login-art h1{font-size:clamp(44px,6vw,84px);font-weight:800;line-height:1}
+.login-art p{max-width:30ch;font-size:20px;color:#bcd6d2;margin-top:24px}
+.wave{position:absolute;left:-10%;right:-10%;bottom:-20px;height:38%;background:#12595a;border-radius:50% 50% 0 0/30% 30% 0 0;animation:sway 9s ease-in-out infinite alternate}
+@keyframes sway{to{transform:translateX(5%) translateY(-14px)}}
+#loginForm{align-self:center;padding:0 8vw;display:grid;gap:16px;max-width:520px}
+#loginForm label{display:grid;gap:6px;color:var(--mut);font-size:14px}
+input{padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;background:#fff}
+.err{color:#c0392b;margin:0;min-height:1.4em}small{color:var(--mut)}
+header{background:var(--ink);color:#fff;display:flex;justify-content:space-between;align-items:center;padding:14px 5vw}
+header h1{font-size:24px}.head-r{display:flex;gap:10px;align-items:center;font-size:14px;color:#bcd6d2;flex-wrap:wrap}
+.hero{background:var(--ink);color:#fff;display:flex;gap:6vw;align-items:center;padding:36px 5vw 64px;flex-wrap:wrap}
+.tank{width:170px;height:260px;border:3px solid #ffffff66;border-radius:26px;position:relative;overflow:hidden;flex:none;background:#ffffff0d}
+.fill{position:absolute;bottom:0;left:0;right:0;height:0;background:var(--lvl);transition:height 1.6s cubic-bezier(.2,.8,.2,1),background .6s;opacity:.9}
+.fill::before{content:"";position:absolute;top:-14px;left:-25%;width:150%;height:28px;background:var(--lvl);border-radius:50%;animation:sway 4s ease-in-out infinite alternate}
+.tank-label{position:absolute;inset:0;display:grid;place-content:center;text-align:center;text-shadow:0 2px 10px #0008}
+.tank-label b{font:800 64px 'Bricolage Grotesque';line-height:1}.tank-label span{font-size:13px}
+.hero-txt{flex:1;min-width:280px}.place{color:#8fc9c2;margin:0 0 4px}
+#levelTxt{font-size:clamp(34px,5vw,60px);font-weight:800;line-height:1.05;color:var(--lvl)}
+#levelMsg{max-width:55ch;color:#d3e6e3;font-size:18px}
+.facts{display:flex;gap:28px;flex-wrap:wrap;margin-top:18px}.facts div{font-size:13px;color:#9fc3be}.facts b{display:block;font:700 26px 'Bricolage Grotesque';color:#fff}
+.upd{color:#7fa6a1;font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;padding:0 5vw;margin-top:-34px}
+.grid2{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:0 5vw 40px;margin-top:18px}
+main>.panel{margin:18px 5vw}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;min-width:0}
+.panel h3{font-size:20px;margin-bottom:14px}
+.wx{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.wx div{font-size:13px;color:var(--mut)}.wx b{display:block;font:700 24px 'Bricolage Grotesque';color:var(--txt)}
+.fc{display:grid}.fc>div{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}.fc>div:last-child{border:0}.fc small{display:block}
+.note{font-size:13px;color:var(--mut)}
+#map{height:380px;border-radius:12px;z-index:0}
+.routes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}.routes div{border-left:5px solid;padding:6px 12px;font-size:14px}.routes b{display:block}
+.nums{display:grid;gap:8px}.nums a{display:flex;justify-content:space-between;padding:10px 14px;border-radius:12px;background:var(--mist);text-decoration:none;color:var(--txt)}.nums b{font:700 20px 'Bricolage Grotesque'}
+details{border-bottom:1px solid var(--line);padding:8px 0}summary{cursor:pointer;font-weight:500}details ul{margin:8px 0 4px;padding-left:20px;color:var(--mut)}
+#area{font:inherit;padding:3px 8px;border-radius:8px;border:1px solid #ffffff55;background:#ffffff14;color:#fff}#area option{color:#000}
+.pair{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;padding:0 5vw;margin-top:18px}
+.bar{display:grid;grid-template-columns:minmax(150px,1.3fr) 2fr 52px;gap:10px;align-items:center;padding:6px 0;border-bottom:1px solid var(--line);font-size:14px}
+.bar small{display:block;color:var(--mut);font-size:12px}.bar b{text-align:right}
+.track{height:12px;background:var(--mist);border-radius:6px;overflow:hidden}.track i{display:block;height:100%;border-radius:6px;transition:width .5s}
+.sl{display:grid;gap:4px;font-size:14px;margin-bottom:12px}.sl b{float:right}.sl input{padding:0;accent-color:var(--lvl)}
+.wi{font:700 20px 'Bricolage Grotesque';margin:6px 0}
+.preset{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;font-size:14px}.preset h4{margin:0 0 6px;font:700 16px 'Bricolage Grotesque'}.preset ul{margin:0;padding-left:18px;color:var(--mut)}
+@media(max-width:900px){.pair,.preset{grid-template-columns:1fr}.bar{grid-template-columns:1fr 1fr 48px}#login{grid-template-columns:1fr}.login-art{padding:8vh 8vw 18vh}#loginForm{padding:30px 8vw}.grid,.grid2,.routes{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.obs{margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+.banner{padding:12px 5vw;background:#7b4fa3;color:#fff;font-size:15px}.banner.alert{background:#e5484d}.banner div+div{margin-top:4px}
+.banner summary{cursor:pointer;margin-top:6px}.banner pre.msg{white-space:pre-wrap;margin:8px 0 0;padding:12px;background:#0003;border-radius:8px;font:13px/1.55 'IBM Plex Sans',sans-serif}
